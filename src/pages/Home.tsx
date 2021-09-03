@@ -33,9 +33,12 @@ export function Home() {
 
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
-    // Guard clause
     if(!roomRef.exists()){
       return alert("There's no room with this ID.");
+    }
+
+    if (roomRef.val().endedAt) {
+      return alert('Room is no longer active.')
     }
 
     history.push(`/rooms/${roomCode}`);
