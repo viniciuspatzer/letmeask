@@ -11,11 +11,17 @@
 
 <div align="center" id="top"> 
   <img src="./.github/images/home.png" alt="dt money logo" />
+
   ---
+
   <img src="./.github/images/new-room.png" alt="dt money logo" />
+
   ---
+
   <img src="./.github/images/normal.png" alt="dt money logo" />
+
   ---
+  
   <img src="./.github/images/admin.png" alt="dt money logo" />
 </div>
 
