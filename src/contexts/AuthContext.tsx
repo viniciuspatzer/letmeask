@@ -26,18 +26,14 @@ export function AuthContextProvider(props: AuthContextProviderProps){
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
         const { displayName, photoURL, uid} = user;
-
-        if (!displayName || !photoURL) {
-          throw new Error('Missing information from Google Account.')
-        }
   
         setUser({
           id: uid,
-          name: displayName,
-          avatar: photoURL
-        })
+          name: displayName || 'Unnamed',
+          avatar: photoURL || 'https://www.gravatar.com/avatar/0?d=mp&f=y'
+        });
       }
-    })
+    });
 
     return () => {
       unsubscribe();
@@ -51,16 +47,12 @@ export function AuthContextProvider(props: AuthContextProviderProps){
 
     if (result.user) {
       const { displayName, photoURL, uid} = result.user;
-
-      if (!displayName || !photoURL) {
-        throw new Error('Missing information from Google Account.')
-      }
-
+      
       setUser({
         id: uid,
-        name: displayName,
-        avatar: photoURL
-      })
+        name: displayName || 'Unnamed',
+        avatar: photoURL || 'https://www.gravatar.com/avatar/0?d=mp&f=y'
+      });
     }
   }
 

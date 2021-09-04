@@ -1,11 +1,11 @@
-import { Link, useHistory } from 'react-router-dom'
 import { FormEvent, useState } from 'react'
-
+import { Link, useHistory } from 'react-router-dom'
 
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 
 import { Button } from '../components/Button'
+
 import { auth, database } from '../services/firebase'
 import { useAuth } from '../hooks/useAuth'
 import toast, { Toaster } from 'react-hot-toast';
@@ -21,7 +21,7 @@ export function NewRoom() {
     event.preventDefault();
 
     if(newRoom.trim() === '') {
-      return
+      return;
     }
 
     const roomRef = database.ref('rooms');
@@ -37,11 +37,7 @@ export function NewRoom() {
   async function signOut(){
     await auth.signOut();
     setUser(undefined);
-
-    toast('Você foi deslogado da sua conta.', {
-      icon: '✅',
-    });
-
+    toast.success('You have been logged out');
     history.push(`/`);
   }
 
@@ -49,26 +45,26 @@ export function NewRoom() {
     <div id="page-auth">
       <aside>
         <img src={illustrationImg} alt="Questions and Answers" />
-        <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo-real</p>
+        <strong>Create live Q&amp;A rooms</strong>
+        <p>Answer your audience's questions in real time</p>
       </aside>
       <main>
         <div className="main-content">
           <img src={logoImg} alt="letmeask" />
-          <h2>Criar uma nova sala</h2>
+          <h2>Create a new room</h2>
           <form onSubmit={handleCreateRoom}>
             <input
             type="text"
-            placeholder="Nome da sala"
+            placeholder="Room name"
             onChange={event => setNewRoom(event.target.value)}
             value={newRoom}
             />
             <Button type="submit">
-              Criar sala
+              Create room
             </Button>
           </form>
           <p>
-            Quer entrar em uma sala existente? <Link to="/">clique aqui</Link>
+            Want to join in an existent room? <Link to="/">click here</Link>
           </p>
         </div>
       </main>

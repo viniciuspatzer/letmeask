@@ -30,13 +30,11 @@ export function Room(){
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
 
-    // Guard clauses
     if (newQuestion.trim() === '') return;
 
     if (!user) {
-      return toast('You must be logged in.', {
-        icon: '❌',
-      });
+      toast.error("You must be logged in")
+      return;
     }
 
     const question = {
@@ -79,13 +77,13 @@ export function Room(){
 
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
-          { questions.length > 0 && <span>{questions.length} pergunta(s)</span> }
+          <h1>{title}</h1>
+          { questions.length > 0 && <span>{questions.length} question(s)</span> }
         </div>
 
         <form onSubmit={handleSendQuestion}>
           <textarea 
-            placeholder="O que você quer perguntar?"
+            placeholder="What do you want to ask?"
             onChange={event => setNewQuestion(event.target.value)}
             value={newQuestion}
           />
@@ -97,9 +95,9 @@ export function Room(){
                 <span>{user.name}</span>
               </div>
             ) : (
-              <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
+              <span>To send a question, <button>sign in</button>.</span>
             ) }
-            <Button type="submit" disabled={!user}>Enviar pergunta</Button>
+            <Button type="submit" disabled={!user}>Send question</Button>
           </div>
         </form>
 
@@ -117,7 +115,7 @@ export function Room(){
                   <button
                     className={`like-button ${question.likeId ? 'liked' : ''}`}
                     type="button"
-                    aria-label="Marcar como gostei"
+                    aria-label="Set as liked"
                     onClick={() => handleLikeQuestion(question.id, question.likeId)}
                   >
                     { question.likeCount > 0 && <span>{question.likeCount}</span>}
