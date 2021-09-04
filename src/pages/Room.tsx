@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import logoImg from '../assets/images/logo.svg';
 
@@ -10,6 +10,7 @@ import { RoomCode } from '../components/RoomCode';
 import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
+import toast, { Toaster } from 'react-hot-toast';
 
 import '../styles/room.scss';
 
@@ -19,6 +20,7 @@ type RoomParams = {
 
 export function Room(){
   const { user } = useAuth();
+  const history = useHistory();
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState('');
   const roomId = params.id;
@@ -32,7 +34,9 @@ export function Room(){
     if (newQuestion.trim() === '') return;
 
     if (!user) {
-      throw new Error('You must be logged in');
+      return toast('You must be logged in.', {
+        icon: '❌',
+      });
     }
 
     const question = {
@@ -64,7 +68,11 @@ export function Room(){
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="letmeask" />
+          <img 
+            src={logoImg} 
+            alt="letmeask" 
+            onClick={() => history.push('/')}
+          />
           <RoomCode code={roomId} />
         </div>
       </header>
@@ -78,7 +86,7 @@ export function Room(){
         <form onSubmit={handleSendQuestion}>
           <textarea 
             placeholder="O que você quer perguntar?"
-            onChange={event => {setNewQuestion(event.target.value)}}
+            onChange={event => setNewQuestion(event.target.value)}
             value={newQuestion}
           />
 
@@ -123,6 +131,8 @@ export function Room(){
           })}
         </div>
       </main>
+
+      <Toaster />
     </div>
   )
 }

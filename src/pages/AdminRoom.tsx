@@ -1,4 +1,3 @@
-// import { useState, FormEvent } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
 import logoImg from '../assets/images/logo.svg';
@@ -21,8 +20,7 @@ type RoomParams = {
 }
 
 export function AdminRoom(){
-  // const { user } = useAuth();
-  const history = useHistory()
+  const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
 
@@ -58,7 +56,11 @@ export function AdminRoom(){
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="letmeask" />
+          <img 
+            src={logoImg} 
+            alt="letmeask" 
+            onClick={() => history.push('/')}
+          />
           <div>
             <RoomCode code={roomId} />
             <Button onClick={handleEndRoom} isOutlined>Encerrar sala</Button>

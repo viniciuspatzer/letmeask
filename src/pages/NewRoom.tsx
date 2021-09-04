@@ -21,7 +21,7 @@ export function NewRoom() {
     event.preventDefault();
 
     if(newRoom.trim() === '') {
-      return;
+      return
     }
 
     const roomRef = database.ref('rooms');
@@ -31,7 +31,7 @@ export function NewRoom() {
       authorId: user?.id
     });
 
-    history.push(`/rooms/${firebaseRoom.key}`);
+    history.push(`/admin/rooms/${firebaseRoom.key}`);
   }
 
   return (
@@ -49,7 +49,7 @@ export function NewRoom() {
             <input
             type="text"
             placeholder="Nome da sala"
-            onChange={event => {setNewRoom(event.target.value)}}
+            onChange={event => setNewRoom(event.target.value)}
             value={newRoom}
             />
             <Button type="submit">

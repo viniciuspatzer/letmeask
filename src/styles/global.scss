@@ -13,6 +13,10 @@ button{
   padding: 0%;
 }
 
+input, textarea {
+  outline: 0;
+}
+
 body, input, button, textarea {
   font: 400 16px "Roboto", sans-serif;
 }

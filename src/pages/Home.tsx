@@ -9,6 +9,7 @@ import { database } from '../services/firebase'
 
 import { Button } from '../components/Button'
 import { useAuth } from '../hooks/useAuth'
+import toast, { Toaster } from 'react-hot-toast';
 
 import '../styles/auth.scss'
 
@@ -34,11 +35,17 @@ export function Home() {
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
     if (!roomRef.exists()){
-      return alert("There's no room with this ID.");
+      toast("There's no room with this ID.", {
+        icon: '⚠️',
+      });
+      return
     }
 
     if (roomRef.val().endedAt) {
-      return alert('Room is no longer active.')
+      toast("Room is no longer active.", {
+        icon: '⚠️',
+      });
+      return
     }
 
     history.push(`/rooms/${roomCode}`);
@@ -63,7 +70,7 @@ export function Home() {
             <input
             type="text"
             placeholder="Digite o código da sala"
-            onChange={event => {setRoomCode(event.target.value)}}
+            onChange={event => setRoomCode(event.target.value)}
             value={roomCode}
             />
             <Button type="submit">
@@ -72,6 +79,8 @@ export function Home() {
           </form>
         </div>
       </main>
+
+      <Toaster />
     </div>
   )
 }
