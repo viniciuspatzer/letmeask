@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./images/letmeask.svg" alt="dt money logo" />
+  <img src="./.github/images/letmeask.svg" alt="dt money logo" />
 </div>
 
 
@@ -10,13 +10,13 @@
 <br>
 
 <div align="center" id="top"> 
-  <img src="./images/home.png" alt="dt money logo" />
+  <img src="./.github/images/home.png" alt="dt money logo" />
   ---
-  <img src="./images/new-room.png" alt="dt money logo" />
+  <img src="./.github/images/new-room.png" alt="dt money logo" />
   ---
-  <img src="./images/normal.png" alt="dt money logo" />
+  <img src="./.github/images/normal.png" alt="dt money logo" />
   ---
-  <img src="./images/admin.png" alt="dt money logo" />
+  <img src="./.github/images/admin.png" alt="dt money logo" />
 </div>
 
 <br>
