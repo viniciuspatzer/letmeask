@@ -6,14 +6,14 @@ import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 
 import { Button } from '../components/Button'
-import { database } from '../services/firebase'
+import { auth, database } from '../services/firebase'
 import { useAuth } from '../hooks/useAuth'
+import toast, { Toaster } from 'react-hot-toast';
 
 import '../styles/auth.scss'
 
-
 export function NewRoom() {
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
   const history = useHistory();
   const [newRoom, setNewRoom] = useState('');
 
@@ -32,6 +32,17 @@ export function NewRoom() {
     });
 
     history.push(`/admin/rooms/${firebaseRoom.key}`);
+  }
+
+  async function signOut(){
+    await auth.signOut();
+    setUser(undefined);
+
+    toast('Você foi deslogado da sua conta.', {
+      icon: '✅',
+    });
+
+    history.push(`/`);
   }
 
   return (
@@ -61,6 +72,14 @@ export function NewRoom() {
           </p>
         </div>
       </main>
+
+      { user && (
+        <div onClick={signOut} className="sign-out">
+          <i className="fas fa-sign-out-alt"></i>
+        </div>
+      ) }
+
+    <Toaster />
     </div>
   )
 }

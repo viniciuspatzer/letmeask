@@ -9,6 +9,7 @@ type User = {
 
 type AuthContextType = {
   user: User | undefined;
+  setUser: (value: User | undefined) => void;
   signInWithGoogle: () => Promise<void>;
 }
 
@@ -64,7 +65,7 @@ export function AuthContextProvider(props: AuthContextProviderProps){
   }
 
   return (
-    <AuthContext.Provider value={{ user, signInWithGoogle }}>
+    <AuthContext.Provider value={{ user, setUser, signInWithGoogle }}>
       {props.children}
     </AuthContext.Provider>
   )

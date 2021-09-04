@@ -5,7 +5,7 @@ import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 
-import { database } from '../services/firebase'
+import { auth, database } from '../services/firebase'
 
 import { Button } from '../components/Button'
 import { useAuth } from '../hooks/useAuth'
@@ -16,7 +16,7 @@ import '../styles/auth.scss'
 
 export function Home() {
   const history = useHistory();
-  const { user, signInWithGoogle } = useAuth();
+  const { user, setUser, signInWithGoogle } = useAuth();
   const [roomCode, setRoomCode] = useState('');
   
   async function handleCreateRoom() {
@@ -51,6 +51,15 @@ export function Home() {
     history.push(`/rooms/${roomCode}`);
   }
 
+  async function signOut(){
+    await auth.signOut();
+    setUser(undefined);
+
+    toast('Você foi deslogado da sua conta.', {
+      icon: '✅',
+    });
+  }
+
   return (
     <div id="page-auth">
       <aside>
@@ -79,6 +88,12 @@ export function Home() {
           </form>
         </div>
       </main>
+
+      { user && (
+        <div onClick={signOut} className="sign-out">
+          <i className="fas fa-sign-out-alt"></i>
+        </div>
+      ) }
 
       <Toaster />
     </div>

@@ -3,6 +3,7 @@
   align-items: stretch;
   height: 100vh;
   min-height: 700px;
+  position: relative;
 
   aside {
     flex: 7;
@@ -139,6 +140,21 @@
       height: 1px;
       background: #A8A8B3;
       margin-left: 16px;
+    }
+  }
+
+  .sign-out {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    padding: 10px;
+    background-color: #835AFD;
+    border-radius: 8px;
+    cursor: pointer;
+
+    i {
+      color: #FFF;
     }
   }
 }
