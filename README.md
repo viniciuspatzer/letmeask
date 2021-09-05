@@ -18,11 +18,11 @@
 
   ---
 
-  <img src="./.github/images/normal.png" alt="normal" />
+  <img src="./.github/images/room.png" alt="normal" />
 
   ---
 
-  <img src="./.github/images/admin.png" alt="admin" />
+  <img src="./.github/images/admin-room.png" alt="admin" />
 </div>
 
 ### [Demo](https://letmeask-5e4f5.web.app/)
