@@ -1,4 +1,4 @@
-<div align="center" id="top"> 
+<div align="center"> 
   <img src="./.github/images/letmeask.svg" alt="dt money logo" />
 </div>
 
@@ -9,8 +9,10 @@
 
 <br>
 
+![home](./.github/images/home.png)
+
 <div align="center" id="top"> 
-  <img src="./.github/images/home.png" alt="dt money logo" width="100%" />
+  <img src="./.github/images/home.png" alt="dt money logo" />
 
   ---
 
