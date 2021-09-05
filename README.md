@@ -9,22 +9,20 @@
 
 <br>
 
-![home](./.github/images/home.png)
-
 <div align="center"> 
-  <img src="./.github/images/homeresize.png" alt="dt money logo" />
+  <img src="./.github/images/home" alt="home" />
 
   ---
 
-  <img src="./.github/images/new-room.png" alt="dt money logo" />
+  <img src="./.github/images/new-room.png" alt="new room" />
 
   ---
 
-  <img src="./.github/images/normal.png" alt="dt money logo" />
+  <img src="./.github/images/normal.png" alt="normal" />
 
   ---
 
-  <img src="./.github/images/admin.png" alt="dt money logo" />
+  <img src="./.github/images/admin.png" alt="admin" />
 </div>
 
 <br>
