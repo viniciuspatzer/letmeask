@@ -57,20 +57,9 @@
 
     .admin-likes {
       position: absolute;
-      top: 15px;
-      right: 15px;
-
-      display: flex;
-      align-items: flex-end;
-      gap: 5px;
-
-      span {
-        color: #737380;
-      }
-
-      svg {
-        width: 20px;
-      }
+      top: 20px;
+      right: 25px;
+      color: #737380;
     }
 
     button {
