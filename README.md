@@ -11,8 +11,8 @@
 
 ![home](./.github/images/home.png)
 
-<div align="center" id="top"> 
-  <img src="./.github/images/home.png" alt="dt money logo" />
+<div align="center"> 
+  <img src="./.github/images/homeresize.png" alt="dt money logo" />
 
   ---
 
