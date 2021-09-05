@@ -2,7 +2,7 @@
   display: flex;
   align-items: stretch;
   height: 100vh;
-  min-height: 700px;
+  min-height: 70rem;
   position: relative;
 
   aside {
@@ -15,22 +15,22 @@
     flex-direction: column;
     justify-content: center;
 
-    padding: 120px 80px;
+    padding: 12rem 8rem;
 
     img {
-      max-width: 320px;
+      max-width: 32rem;
     }
 
     strong {
-      font: 700 36px 'Poppins', sans-serif;
-      line-height: 42px;
-      margin-top: 16px;
+      font: 700 3.6rem 'Poppins', sans-serif;
+      line-height: 4.2rem;
+      margin-top: 1.6rem;
     }
 
     p {
-      font-size: 24px;
-      line-height: 32px;
-      margin-top: 16px;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      margin-top: 1.6rem;
       color: #F8F8F8;
     }
   }
@@ -38,7 +38,7 @@
   main {
     flex: 8;
 
-    padding: 0 32px;
+    padding: 0 3.2rem;
 
     display: flex;
     align-items: center;
@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 320px;
+    max-width: 32rem;
     align-items: stretch;
     text-align: center;
 
@@ -58,8 +58,8 @@
     }
 
     h2 {
-      font-size: 24px;
-      margin: 64px 0 24px;
+      font-size: 2.4rem;
+      margin: 6.4rem 0 2.4rem;
       font-family: 'Poppins', sans-serif;
     }
 
@@ -82,9 +82,9 @@
     }
 
     p {
-      font-size: 14px;
+      font-size: 1.4rem;
       color-interpolation-filters: #737380;
-      margin-top: 16px;
+      margin-top: 1.6rem;
 
       a {
         color: #E559F9;
@@ -93,9 +93,9 @@
   }
 
   .create-room {
-    margin-top: 64px;
-    height: 50px;
-    border-radius: 8px;
+    margin-top: 6.4rem;
+    height: 5rem;
+    border-radius: 0.8rem;
     font-weight: 500;
     background: #EA4335;
     color: #FFF;
@@ -110,7 +110,7 @@
     transition: filter 0.2s;
 
     img{
-      margin-right: 8px;
+      margin-right: 0.8rem;
     }
 
     &:hover{
@@ -119,10 +119,10 @@
   }
 
   .separator {
-    font-size: 14px;
+    font-size: 1.4rem;
     color: #A8A8B3;
     
-    margin: 32px 0;
+    margin: 3.2rem 0;
     display: flex;
     align-items: center;
 
@@ -131,7 +131,7 @@
       flex: 1;
       height: 1px;
       background: #A8A8B3;
-      margin-right: 16px;
+      margin-right: 1.6rem;
     }
 
     &::after{
@@ -139,18 +139,18 @@
       flex: 1;
       height: 1px;
       background: #A8A8B3;
-      margin-left: 16px;
+      margin-left: 1.6rem;
     }
   }
 
   .sign-out {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 2.5rem;
+    right: 2.5rem;
 
-    padding: 10px;
+    padding: 1rem;
     background-color: #835AFD;
-    border-radius: 8px;
+    border-radius: 0.8rem;
     cursor: pointer;
 
     i {
@@ -166,7 +166,7 @@
     }
 
     .main-content {
-      margin-bottom: 150px;
+      margin-bottom: 15rem;
     }
   }
 }

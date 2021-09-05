@@ -1,10 +1,10 @@
 .button {
-  height: 50px;
-  border-radius: 8px;
+  height: 5rem;
+  border-radius: 0.8rem;
   font-weight: 500;
   background: #835AFD;
   color: #FFF;
-  padding: 0 32px;
+  padding: 0 3.2rem;
 
   display: flex;
   justify-content: center;
@@ -16,7 +16,7 @@
   transition: filter 0.2s;
 
   img {
-    margin-right: 8px;
+    margin-right: 0.8rem;
   }
 
   &.outlined {

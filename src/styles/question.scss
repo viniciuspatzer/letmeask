@@ -1,12 +1,12 @@
 .question {
   background: #FEFEFE;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  padding: 24px;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.04);
+  padding: 2.4rem;
   position: relative;
 
   & + .question {
-    margin-top: 8px;
+    margin-top: 0.8rem;
   }
 
   &.highlighted {
@@ -31,34 +31,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 24px;
+    margin-top: 2.4rem;
 
     .user-info {
       display: flex;
       align-items: center;
 
       img {
-        width: 32px;
-        height: 32px;
+        width: 3.2rem;
+        height: 3.2rem;
         border-radius: 50%;
       }
 
       span {
-        margin-left: 8px;
+        margin-left: 0.8rem;
         color: #737380;
-        font-size: 14px;
+        font-size: 1.4rem;
       }
     }
 
     > div {
       display: flex;
-      gap: 16px;
+      gap: 1.6rem;
     }
 
     .admin-likes {
       position: absolute;
-      top: 20px;
-      right: 25px;
+      top: 2.0rem;
+      right: 2.5rem;
       color: #737380;
     }
 
@@ -72,7 +72,7 @@
         display: flex;
         align-items: flex-end;
         color: #737380;
-        gap: 8px;
+        gap: 0.8rem;
 
         &.liked {
           color: #835AFD;
