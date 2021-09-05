@@ -37,7 +37,7 @@ export function Room(){
     if (newQuestion.trim() === '') return;
 
     if (!user) {
-      toast.error("You must be logged in")
+      toast.error("You must be logged in");
       return;
     }
 
@@ -57,8 +57,11 @@ export function Room(){
   }
 
   async function handleLikeQuestion(questionId: string, likeId: string | undefined) {
-    if (!user) return;
-    
+    if (!user) {
+      toast.error('You must be logged in');
+      return;
+    }
+
     if (likeId) {
       await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove();
     } else {
