@@ -3,6 +3,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 24px;
+  position: relative;
 
   & + .question {
     margin-top: 8px;
@@ -52,6 +53,24 @@
     > div {
       display: flex;
       gap: 16px;
+    }
+
+    .admin-likes {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+
+      display: flex;
+      align-items: flex-end;
+      gap: 5px;
+
+      span {
+        color: #737380;
+      }
+
+      svg {
+        width: 20px;
+      }
     }
 
     button {
