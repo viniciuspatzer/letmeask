@@ -10,7 +10,7 @@
 <br>
 
 <div align="center"> 
-  <img src="./.github/images/home" alt="home" />
+  <img src="./.github/images/home.png" alt="home" />
 
   ---
 
